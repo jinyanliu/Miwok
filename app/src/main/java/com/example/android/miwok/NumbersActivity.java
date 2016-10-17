@@ -73,26 +73,32 @@ public class NumbersActivity extends AppCompatActivity {
         //Find the root view of the whole layout
         LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 
-        /*
-        Setup counter variable
-        Create a variable to keep track of the current index position
-         */
-        int index = 0;
+//        /*
+//        Setup counter variable
+//        Create a variable to keep track of the current index position
+//         */
+//        int index = 0;
+//
+//        while (index < words.size()) {
+//
+//           /*
+//           Instructions
+//           Create a new TextView that displays the word
+//           add the view as a child to the rootView
+//            */
+//            TextView wordView = new TextView(this);
+//            wordView.setText(words.get(index));
+//            rootView.addView(wordView);
+//
+//            //Update counter variable
+//            index++; //index = index + 1
+//
+//        }
 
-        while (index < words.size()) {
-
-           /*
-           Instructions
-           Create a new TextView that displays the word
-           add the view as a child to the rootView
-            */
+        for (int index = 0; index < words.size(); index++) {
             TextView wordView = new TextView(this);
             wordView.setText(words.get(index));
             rootView.addView(wordView);
-
-            //Update counter variable
-            index++; //index = index + 1
-
         }
 
     }
