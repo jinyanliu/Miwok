@@ -112,7 +112,7 @@ public class NumbersActivity extends AppCompatActivity {
         The adapter knows how to create layouts for each item in the list, using the simple_list_item_1.xml layout resource defined in the Android framwork.
         This list item layout contains a single TextView, which the adapter will set to display a single word.
          */
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, R.layout.list_item, words);
 
         /*
         Find the ListView object in the view hierarchy of the Activity.
