@@ -17,15 +17,15 @@ public class PhrasesActivity extends AppCompatActivity {
         ArrayList<Word> words = new ArrayList<Word>();
 
         words.add(new Word("Where are you going?", "minto wuksus"));
-        words.add(new Word("What is your name?", "tinne oyaase'ne"));
+        words.add(new Word("What is your name?", "tinnә oyaase'nә"));
         words.add(new Word("My name is...", "oyaaset..."));
-        words.add(new Word("How are you feeling?", "michekses?"));
-        words.add(new Word("I'm feeling good.", "kuchi achit"));
-        words.add(new Word("Are you coming?", "eenes'aa?"));
-        words.add(new Word("Yes, I'm coming.", "hee'eenem"));
-        words.add(new Word("I'm coming.", "eenem"));
-        words.add(new Word("Let's go.", "yoowutis"));
-        words.add(new Word("Come here.", "anni'nem"));
+        words.add(new Word("How are you feeling?", "michәksәs?"));
+        words.add(new Word("I’m feeling good.", "kuchi achit"));
+        words.add(new Word("Are you coming?", "әәnәs'aa?"));
+        words.add(new Word("Yes, I’m coming.", "hәә’ әәnәm"));
+        words.add(new Word("I’m coming.", "әәnәm"));
+        words.add(new Word("Let’s go.", "yoowutis"));
+        words.add(new Word("Come here.", "әnni'nem"));
 
         /*
         Create an WordAdapter, whose date source is a list of Words.
