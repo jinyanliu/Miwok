@@ -11,7 +11,7 @@ public class NumbersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.word_list);
 
         //Create an array list of words.
         ArrayList<Word> words = new ArrayList<Word>();
@@ -35,7 +35,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         /*
         Find the ListView object in the view hierarchy of the Activity.
-        There should be a ListView with the view ID called list, which is declared in activity_numbers xml layout file.
+        There should be a ListView with the view ID called list, which is declared in word_list xml layout file.
          */
         ListView listView = (ListView) findViewById(R.id.list);
 
