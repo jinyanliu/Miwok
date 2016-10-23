@@ -16,16 +16,16 @@ public class FamilyActivity extends AppCompatActivity {
         //Create an array list of words.
         ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word("father", "әpә"));
-        words.add(new Word("mother", "әṭa"));
-        words.add(new Word("son", "angsi"));
-        words.add(new Word("daughter", "tune"));
-        words.add(new Word("older brother", "taachi"));
-        words.add(new Word("younger brother", "chalitti"));
-        words.add(new Word("older sister", "teṭe"));
-        words.add(new Word("younger sister", "kolliti"));
-        words.add(new Word("grandmother ", "ama"));
-        words.add(new Word("grandfather", "paapa"));
+        words.add(new Word("father", "әpә",R.mipmap.ic_launcher));
+        words.add(new Word("mother", "әṭa",R.mipmap.ic_launcher));
+        words.add(new Word("son", "angsi",R.mipmap.ic_launcher));
+        words.add(new Word("daughter", "tune",R.mipmap.ic_launcher));
+        words.add(new Word("older brother", "taachi",R.mipmap.ic_launcher));
+        words.add(new Word("younger brother", "chalitti",R.mipmap.ic_launcher));
+        words.add(new Word("older sister", "teṭe",R.mipmap.ic_launcher));
+        words.add(new Word("younger sister", "kolliti",R.mipmap.ic_launcher));
+        words.add(new Word("grandmother ", "ama",R.mipmap.ic_launcher));
+        words.add(new Word("grandfather", "paapa",R.mipmap.ic_launcher));
 
         /*
         Create an WordAdapter, whose date source is a list of Words.
