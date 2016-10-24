@@ -29,7 +29,7 @@ public class ColorsActivity extends AppCompatActivity {
         Create an WordAdapter, whose date source is a list of Words.
         The adaper knows how to create list items for each item in the list.
          */
-        WordAdapter adapter = new WordAdapter(this, words);
+        WordAdapter adapter = new WordAdapter(this, words, R.color.category_colors);
 
         /*
         Find the ListView object in the view hierarchy of the Activity.
