@@ -1,7 +1,6 @@
 package com.example.android.miwok;
 
 import android.app.Activity;
-import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
@@ -22,12 +21,9 @@ WordAdapter is an ArrayAdapter that can provide the layout for each list based o
  */
 public class WordAdapter extends ArrayAdapter<Word> {
 
-    MediaPlayer mediaPlayer;
-
+    private static final String LOG_TAG = WordAdapter.class.getSimpleName();
     //Resource ID for the background color for this list of words
     private int mColorResourceId;
-
-    private static final String LOG_TAG = WordAdapter.class.getSimpleName();
 
     /*
     This is our own custom constructor (it doesn't mirror a superclass constructor).
@@ -84,14 +80,13 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Find the ImageView in the list_item.xml layout with the ID list_item_icon
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.list_item_icon);
 
-        if(currentWord.hasImage()) {
+        if (currentWord.hasImage()) {
             // Get the image resource ID from the current Word object and
             // set the image to iconView
             iconView.setImageResource(currentWord.getImageResourceId());
             //Make sure the view is visible
             iconView.setVisibility(View.VISIBLE);
-        }
-        else{
+        } else {
             //Otherwise hide the iconView (set visibility to GONE)
             iconView.setVisibility(View.GONE);
         }
@@ -102,15 +97,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
         int color = ContextCompat.getColor(getContext(), mColorResourceId);
         //Set the background color of the text container View
         textContainer.setBackgroundColor(color);
-
-        mediaPlayer = MediaPlayer.create(getContext(), currentWord.getSoundResourceId());
-
-        textContainer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mediaPlayer.start();
-            }
-        });
 
         // Return the whole list item layout (containing 2 TextViews)
         // so that it can be shown in the ListView
