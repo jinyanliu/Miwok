@@ -19,7 +19,8 @@
         android:layout_height="match_parent"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:paddingLeft="16dp">
+        android:paddingLeft="16dp"
+        android:clickable="true">
 
         <TextView
             android:id="@+id/miwok_text_view"

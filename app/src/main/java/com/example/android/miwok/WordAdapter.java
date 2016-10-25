@@ -1,6 +1,7 @@
 package com.example.android.miwok;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
@@ -20,6 +21,8 @@ import java.util.ArrayList;
 WordAdapter is an ArrayAdapter that can provide the layout for each list based on a data source, which is a list of Word objects.
  */
 public class WordAdapter extends ArrayAdapter<Word> {
+
+    MediaPlayer mediaPlayer;
 
     //Resource ID for the background color for this list of words
     private int mColorResourceId;
@@ -99,6 +102,15 @@ public class WordAdapter extends ArrayAdapter<Word> {
         int color = ContextCompat.getColor(getContext(), mColorResourceId);
         //Set the background color of the text container View
         textContainer.setBackgroundColor(color);
+
+        mediaPlayer = MediaPlayer.create(getContext(), currentWord.getSoundResourceId());
+
+        textContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.start();
+            }
+        });
 
         // Return the whole list item layout (containing 2 TextViews)
         // so that it can be shown in the ListView
