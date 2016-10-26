@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -21,7 +20,6 @@ public class ColorsActivity extends AppCompatActivity {
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mMediaPlayer) {
-            Toast.makeText(getApplicationContext(), "I'm done! Release!", Toast.LENGTH_SHORT).show();
 
             //Now that the sound file has finished playing, release the media player resource.
             releaseMediaPlayer();
@@ -72,7 +70,6 @@ public class ColorsActivity extends AppCompatActivity {
 
                 //Release the media player if it currently exists because we are about to play a different sound file.
                 releaseMediaPlayer();
-                Toast.makeText(getApplicationContext(), "Prepare!", Toast.LENGTH_SHORT).show();
 
                 //Create and setup the MediaPlayer for the audio resource associated with the current word
                 mMediaPlayer = MediaPlayer.create(ColorsActivity.this, word.getSoundResourceId());
