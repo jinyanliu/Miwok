@@ -16,6 +16,19 @@ public class NumbersActivity extends AppCompatActivity {
     //Handles playback of all the sound files
     private MediaPlayer mMediaPlayer;
 
+    /**
+     * This listener gets triggered when the MediaPlayer has completed playing the audio file.
+     */
+    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mMediaPlayer) {
+            Toast.makeText(getApplicationContext(), "I'm done! Release!", Toast.LENGTH_SHORT).show();
+
+            //Now that the sound file has finished playing, release the media player resource.
+            releaseMediaPlayer();
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,20 +75,18 @@ public class NumbersActivity extends AppCompatActivity {
 
                 Log.v("NumbersActivity", "Current word: " + word);
 
-                //Create and setup the MediaPlayer for the audio resource associated with the current word
+                //Release the media player if it currently exists because we are about to play a different sound file.
                 releaseMediaPlayer();
                 Toast.makeText(getApplicationContext(), "Prepare!", Toast.LENGTH_SHORT).show();
+
+                //Create and setup the MediaPlayer for the audio resource associated with the current word
                 mMediaPlayer = MediaPlayer.create(NumbersActivity.this, word.getSoundResourceId());
 
                 //Start the audio file
                 mMediaPlayer.start();
-                mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mediaPlayer) {
-                        Toast.makeText(getApplicationContext(), "I'm done! Release!", Toast.LENGTH_SHORT).show();
-                        releaseMediaPlayer();
-                    }
-                });
+
+                //Setup a listener on the media player, so that we can stop and release the media player once the sound has finished playing.
+                mMediaPlayer.setOnCompletionListener(mCompletionListener);
             }
         });
     }
