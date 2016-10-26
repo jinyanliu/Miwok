@@ -101,4 +101,12 @@ public class FamilyActivity extends AppCompatActivity {
             mMediaPlayer = null;
         }
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        //Release the media player if the app enter onStrop state
+        releaseMediaPlayer();
+    }
+
 }
