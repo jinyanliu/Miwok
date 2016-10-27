@@ -104,6 +104,9 @@ public class FamilyActivity extends AppCompatActivity {
                 //Get the Word Object at the given position the user clicked on
                 Word word = words.get(position);
 
+                //Release the media player if it currently exists because we are about to play a different sound file.
+                releaseMediaPlayer();
+
                 //Request audio focus so in order to play the audio file. The app needs to play a
                 //short audio file, so we will request audio focus with a short amount of time with
                 //with AUDIOFOCUS_GAIN_TRANSIENT.
@@ -111,9 +114,6 @@ public class FamilyActivity extends AppCompatActivity {
 
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
                     //We have audio focus now.
-
-                    //Release the media player if it currently exists because we are about to play a different sound file.
-                    releaseMediaPlayer();
 
                     //Create and setup the MediaPlayer for the audio resource associated with the current word
                     mMediaPlayer = MediaPlayer.create(FamilyActivity.this, word.getSoundResourceId());
