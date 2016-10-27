@@ -19,6 +19,7 @@ public class NumbersActivity extends AppCompatActivity {
 
     //Handles audio focus when playing a sound file.
     private AudioManager mAudioManager;
+
     /**
      * This listener gets triggered whenever audio focus changes
      * (i.e., we gain or lose audio focus because of another app or device.)
@@ -44,6 +45,7 @@ public class NumbersActivity extends AppCompatActivity {
             }
         }
     };
+
     //This listener gets triggered when the MediaPlayer has completed playing the audio file.
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
