@@ -5,7 +5,6 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -110,8 +109,6 @@ public class NumbersFragment extends Fragment {
 
                 //Get the Word Object at the given position the user clicked on
                 Word word = words.get(position);
-
-                Log.v("NumbersActivity", "Current Word:" + word);
 
                 //Release the media player if it currently exists because we are about to play a different sound file.
                 releaseMediaPlayer();
