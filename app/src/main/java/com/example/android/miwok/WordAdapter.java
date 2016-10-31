@@ -27,7 +27,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
     /*
     This is our own custom constructor (it doesn't mirror a superclass constructor).
-    The context is used to inflate the layout file, and the list it the data we want to populate into the lists.
+    The context is used to inflate the layout file, and the list is the data we want to populate into the lists.
     @param context The current context. Used to inflate the layout file.
     @param Word A list of Word objects to display in a list.
     @param colorResourceId is the resource ID for the background color for this list of words.
@@ -67,6 +67,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         // Find the TextView in the list_item.xml layout with the ID miwok_text_view
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
+
         // Get the MiwokTranslation from the current Word object and
         // set this text on the miwok TextView
         miwokTextView.setText(currentWord.getMiwokTranslation());
