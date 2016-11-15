@@ -86,8 +86,8 @@ public class NumbersFragment extends Fragment {
         words.add(new Word("ten", "na’aacha", R.drawable.number_ten, R.raw.number_ten));
 
         /*
-        Create an WordAdapter, whose date source is a list of Words.
-        The adaper knows how to create list items for each item in the list.
+        Create an WordAdapter, whose date source is a list of Word objects.
+        The adapter knows how to create list items for each item in the list.
          */
         WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_numbers);
 

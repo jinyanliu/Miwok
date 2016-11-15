@@ -47,8 +47,8 @@ public class WordAdapter extends ArrayAdapter<Word> {
     /*
     Provides a view for an AdapterView (ListView, Gridview, etc.)
     @param position The position in the list of data that should be displayed in the list item view.
-    @param converView The recycled view to populate.
-    @param parent the parent ViewGroup that is used for inflation.
+    @param convertView The recycled view to populate.
+    @param parent The parent ViewGroup that is used for inflation.
     @return The View for the position in the AdapterView.
      */
 
@@ -99,7 +99,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         //Set the background color of the text container View
         textContainer.setBackgroundColor(color);
 
-        // Return the whole list item layout (containing 2 TextViews)
+        // Return the whole list item layout (containing 2 TextViews and 1 ImageView)
         // so that it can be shown in the ListView
         return listItemView;
     }
